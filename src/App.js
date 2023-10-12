@@ -12,6 +12,24 @@ const Button = (props) => (
   </button>
 )
 
+export function Avg({g, n, b}){
+  let avg = ((g - b) / (g + n + b)) * 100
+  return(
+    <div>
+      average {avg}
+    </div>
+  );
+}
+
+export function Pos({g, n, b}){
+  let pos = g / (g + n + b)
+  return(
+    <div>
+     positive {pos} %
+    </div>
+  );
+}
+
 function App() {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
@@ -43,6 +61,9 @@ function App() {
       good {good} <br/>
       neutral {neutral} <br/>
       bad {bad} <br/>
+      all {bad + good + neutral} <br/>
+      <Avg g = {good} n = {neutral} b = {bad}/> 
+      <Pos g = {good} n = {neutral} b = {bad} />
     </div>
   );
 }
