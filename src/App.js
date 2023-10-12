@@ -16,7 +16,7 @@ export function Avg({g, n, b}){
   let avg = ((g - b) / (g + n + b)) * 100
   return(
     <div>
-      average {avg}
+       {avg}
     </div>
   );
 }
@@ -25,7 +25,7 @@ export function Pos({g, n, b}){
   let pos = g / (g + n + b)
   return(
     <div>
-     positive {pos} %
+     {pos} %
     </div>
   );
 }
@@ -33,12 +33,32 @@ export function Pos({g, n, b}){
 export function Statistics({g, n, b}){
   return(
     <div>
-      good {g} <br/>
-      neutral {n} <br/>
-      bad {b} <br/>
-      all {b + g + n} <br/>
-      <Avg g = {g} n = {n} b = {b}/> 
-      <Pos g = {g} n = {n} b = {b} />
+      <table>
+        <tr>
+          <td>good</td>
+          <td>{g}</td>
+        </tr>
+        <tr>
+          <td>neutral</td>
+          <td>{n}</td>
+        </tr>
+        <tr>
+          <td>bad</td>
+          <td>{b}</td>
+        </tr>
+        <tr>
+          <td>all</td>
+          <td>{b + g + n}</td>
+        </tr>
+        <tr>
+          <td>average</td>
+          <td><Avg g = {g} n = {n} b = {b}/> </td>
+        </tr>
+        <tr>
+          <td>positive</td>
+          <td><Pos g = {g} n = {n} b = {b} /></td>
+        </tr>   
+      </table>
     </div>
   );
 }
