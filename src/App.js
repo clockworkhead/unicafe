@@ -30,6 +30,19 @@ export function Pos({g, n, b}){
   );
 }
 
+export function Statistics({g, n, b}){
+  return(
+    <div>
+      good {g} <br/>
+      neutral {n} <br/>
+      bad {b} <br/>
+      all {b + g + n} <br/>
+      <Avg g = {g} n = {n} b = {b}/> 
+      <Pos g = {g} n = {n} b = {b} />
+    </div>
+  );
+}
+
 function App() {
   const [good, setGood] = useState(0)
   const [neutral, setNeutral] = useState(0)
@@ -57,13 +70,8 @@ function App() {
       <Button handleClick = {() => setToNeutral(neutral + 1)} text = "neutral"/>
       <Button handleClick = {() => setToBad(bad + 1)} text = "bad"/>
       <br/>
-      <h2>stattistics</h2>
-      good {good} <br/>
-      neutral {neutral} <br/>
-      bad {bad} <br/>
-      all {bad + good + neutral} <br/>
-      <Avg g = {good} n = {neutral} b = {bad}/> 
-      <Pos g = {good} n = {neutral} b = {bad} />
+      <h2>statistics</h2>
+      <Statistics g = {good} n = {neutral} b = {bad}/>
     </div>
   );
 }
