@@ -1,10 +1,11 @@
-import { Positive } from "./positiveComponent";
-import { Average } from "./averageComponent";
+import { Positive } from "./Positive";
+import { Average } from "./Average";
 
 export function Statistics({good, neutral, bad}){
-    if(good === 0 && neutral === 0 && bad === 0) return(<div>No feedback given</div>);
+  const total = good + neutral + bad
+    if(total === 0) return(<div>No feedback given</div>);
     
-   else return(
+   return(
         
       <div>
         <table>
@@ -22,15 +23,15 @@ export function Statistics({good, neutral, bad}){
           </tr>
           <tr>
             <td>all</td>
-            <td>{bad + good + neutral}</td>
+            <td>{total}</td>
           </tr>
           <tr>
             <td>average</td>
-            <td><Average good = {good} neutral = {neutral} bad = {bad}/> </td>
+            <td><Average good={good} neutral={neutral} bad={bad}/> </td>
           </tr>
           <tr>
             <td>positive</td>
-            <td><Positive good = {good} neutral = {neutral} bad = {bad} /></td>
+            <td><Positive good={good} neutral={neutral} bad={bad} /></td>
           </tr>   
         </table>
       </div>

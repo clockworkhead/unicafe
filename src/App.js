@@ -40,12 +40,12 @@ function App() {
   return (
     <div>  
       <h2>Give feedback</h2>
-      <Button handleClick = {handleGood} text = "good" />
-      <Button handleClick = {handleNeutral} text = "neutral"/>
-      <Button handleClick = {handleBad} text = "bad"/>
+      <Button handleClick={handleGood} text = "good" />
+      <Button handleClick={handleNeutral} text = "neutral"/>
+      <Button handleClick={handleBad} text = "bad"/>
       <br/>
       <h2>statistics</h2>
-      <Statistics good = {good} neutral = {neutral} bad = {bad}/> 
+      <Statistics good={good} neutral={neutral} bad={bad}/> 
     </div>
   );
 }
