@@ -1,4 +1,4 @@
-export default function Average({good, neutral, bad}){
+export function Average({good, neutral, bad}){
     const avg = ((good - bad) / (good + neutral + bad)) * 100
     return(
       <div>
@@ -6,3 +6,5 @@ export default function Average({good, neutral, bad}){
       </div>
     );
   }
+
+  export default Average

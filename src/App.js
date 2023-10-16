@@ -2,7 +2,7 @@ import React from 'react'
 
 import './App.css';
 import { useState } from 'react';
-import { Statistics } from './components/statisticsComponent';
+import { Statistics } from './components/Statistics';
 
 const Button = (props) => (
   <button onClick={props.handleClick}>
@@ -18,20 +18,20 @@ function App() {
   
 
   const handleGood = () => {
-    console.log('value now', good)
-    setGood(good + 1)
+    const increment = good + 1
+    setGood(increment)
     setHide(false)
   }
 
   const handleNeutral = () => {
-    console.log('value now', neutral)
-    setNeutral(neutral + 1)
+    const increment = neutral + 1
+    setNeutral(increment)
     setHide(false)
   }
 
   const handleBad = () => {
-    console.log('value now', bad)
-    setBad(bad + 1)
+    const increment = bad + 1
+    setBad(increment)
     setHide(false)
   }
 
